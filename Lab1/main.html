@@ -43,10 +43,10 @@
     <div class="container">
         <h1>Taksh Dhabalia</h1>
         <div class="contact-info mb-4">
-            <p>Pune, Maharashtra</p>
-            <p>Email: <a href="mailto:dhabalia.taksh@gmail.com">dhabalia.taksh@gmail.com</a></p>
-            <p>Phone: +91 7715958053</p>
-            <p><a href="https://github.com/TakshDhabalia">GitHub</a> | <a href="https://www.linkedin.com/in/taksh-dhabalia-2b6969202/">LinkedIn</a></p>
+            <p id="location">Pune, Maharashtra</p>
+            <p id="email">Email: <a href="mailto:dhabalia.taksh@gmail.com">dhabalia.taksh@gmail.com</a></p>
+            <p id="phone">Phone: +91 7715958053</p>
+            <p><a href="https://github.com/your-username">GitHub</a> | <a href="https://www.linkedin.com/in/your-profile">LinkedIn</a></p>
         </div>
 
         <div class="education mb-4">
@@ -133,12 +133,13 @@
 
         <div class="skills mb-4">
             <h2 class="section-title">Skills</h2>
-            <ul class="list-unstyled">
+            <ul class="list-unstyled" id="skills-list">
                 <li><strong>Languages:</strong> Python, C, C++</li>
                 <li><strong>Packages:</strong> Music21, OpenCV, Pandas, Numpy, TensorFlow</li>
                 <li><strong>Electronics:</strong> Sensors and coding, Raspberry Pi, Automation</li>
                 <li><strong>Software:</strong> MATLAB, AutoCAD</li>
             </ul>
+            <button class="btn btn-primary" onclick="addSkill()">Add New Skill</button>
         </div>
 
         <div class="awards mb-4">
@@ -171,10 +172,12 @@
         <p><a href="photos.html">Go to Photo Gallery</a></p>
     </div>
 
-    <!-- Dependencies -->
+    <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+    <!-- Custom JS -->
+    <script src="script.js"></script>
 </body>
 </html>
