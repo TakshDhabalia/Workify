@@ -54,3 +54,19 @@ Workify helps you tweak your resume for each job you apply to by:
    ```bash
    git clone https://github.com/yourusername/workify.git
    cd workify
+
+
+client
+
+cd into client 
+npm install 
+npm run build 
+npm run dev 
+
+
+
+server 
+
+cd into server
+npm start
+
