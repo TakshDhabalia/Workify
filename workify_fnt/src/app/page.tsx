@@ -34,19 +34,7 @@ const handleRedirectPricing = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-      <header className="bg-white shadow-sm sticky top-0 z-10">
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <div className="flex items-center">
-            <span className="text-2xl font-bold text-indigo-600">Workify</span>
-          </div>
-          <div className="hidden sm:block">
-            <Button variant="ghost" className="mr-2" onClick={handleRedirectFeatures}>Features</Button>
-            <Button variant="ghost" className="mr-2"onClick={handleRedirectPricing}>Pricing</Button>
-            <Button variant="ghost" className="mr-4"onClick={handleRedirectAbout}>About</Button>
-            <Button onClick={handleRedirect}>Get Started </Button>
-          </div>
-        </nav>
-      </header>
+      
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <section className="text-center mb-16">

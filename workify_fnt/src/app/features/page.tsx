@@ -1,22 +1,17 @@
+'use client'
 import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
 import { FileText, Send, Lightbulb, Database, Globe, Cpu } from 'lucide-react'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
+
 
 export default function FeaturesPage() {
+  const router = useRouter(); 
+  const handleRedirectWorkify = () => router.push('workify')
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
-      <header className="bg-white shadow-sm">
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <span className="text-2xl font-bold text-indigo-600">Workify</span>
-          <div className="space-x-4">
-            <Button variant="ghost">Home</Button>
-            <Button variant="ghost">About</Button>
-            <Button variant="ghost">Pricing</Button>
-            <Button>Get Started</Button>
-          </div>
-        </nav>
-      </header>
+
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <h1 className="text-4xl font-bold text-center mb-12 text-gray-900">Workify Features</h1>
@@ -65,7 +60,7 @@ export default function FeaturesPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <Card>
               <CardContent className="pt-6">
-                <Image src="/placeholder.svg?height=80&width=80" height={80} width={80} alt="Next.js logo" className="mx-auto mb-4" />
+                <Image src="/nextjs.svg" height={80} width={80} alt="Next.js logo" className="mx-auto mb-4" />
                 <CardTitle className="text-center mb-2">Next.js</CardTitle>
                 <CardDescription className="text-center">
                   React framework for building fast and scalable web applications.
@@ -74,16 +69,16 @@ export default function FeaturesPage() {
             </Card>
             <Card>
               <CardContent className="pt-6">
-                <Image src="/placeholder.svg?height=80&width=80" height={80} width={80} alt="Supabase logo" className="mx-auto mb-4" />
+                <Image src="/supabase-logo-wordmark--light.svg" height={80} width={190}   alt="Supabase logo" className="mx-auto mb-4" />
                 <CardTitle className="text-center mb-2">Supabase</CardTitle>
-                <CardDescription className="text-center">
+                <CardDescription className="text-center" >
                   Open-source Firebase alternative for backend infrastructure.
                 </CardDescription>
               </CardContent>
             </Card>
             <Card>
               <CardContent className="pt-6">
-                <Image src="/placeholder.svg?height=80&width=80" height={80} width={80} alt="Vercel logo" className="mx-auto mb-4" />
+                <Image src="/Vercel_logo.svg" height={80} width={180} alt="Vercel logo" className="mx-auto mb-4" />
                 <CardTitle className="text-center mb-2">Vercel</CardTitle>
                 <CardDescription className="text-center">
                   Cloud platform for static sites and Serverless Functions.
@@ -92,7 +87,7 @@ export default function FeaturesPage() {
             </Card>
             <Card>
               <CardContent className="pt-6">
-                <Image src="/placeholder.svg?height=80&width=80" height={80} width={80} alt="GROQ logo" className="mx-auto mb-4" />
+                <Image src="/groq.svg" height={80} width={180} alt="GROQ logo" className="mx-auto mb-4" />
                 <CardTitle className="text-center mb-2">GROQ</CardTitle>
                 <CardDescription className="text-center">
                   Advanced AI model for natural language processing tasks.
@@ -107,7 +102,8 @@ export default function FeaturesPage() {
           <p className="text-xl text-gray-700 mb-6">
             Harness cutting-edge technology to supercharge your job search.
           </p>
-          <Button size="lg">
+          
+          <Button size="lg" onClick={handleRedirectWorkify}>
             Start Your Free Trial
           </Button>
         </section>
