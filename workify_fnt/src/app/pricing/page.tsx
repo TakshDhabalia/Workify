@@ -17,7 +17,7 @@ export default function PricingPage() {
     },
     {
       name: "Pro",
-      price: "₹11,000",
+      price: "₹13,000",
       description: "Ideal for serious job seekers",
       features: [
         "Advanced Resume Analysis",
@@ -29,7 +29,7 @@ export default function PricingPage() {
     },
     {
       name: "Enterprise",
-      price: "₹12,000",
+      price: "₹17,000",
       description: "For professionals and career changers",
       features: [
         "Expert Resume Review",
