@@ -1,75 +1,88 @@
 'use client'
+
 import { useState, ChangeEvent } from 'react'
 import { motion } from 'framer-motion'
-import { Upload, Mail, Lightbulb, ArrowRight } from 'lucide-react'
+import { Upload, Mail, Lightbulb, ArrowRight, FileText, Send } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
 import { createClient } from '@supabase/supabase-js'
-import { useToast } from "@/hooks/use-toast"
-import { ToastAction } from "@/components/ui/toast"
 
 export default function Workify() {
   const [email, setEmail] = useState('')
   const [suggestions, setSuggestions] = useState('')
-  const { toast } = useToast()
+  const [selectedFile, setSelectedFile] = useState<File | null>(null)
+  const [filePreview, setFilePreview] = useState<string | null>(null)
 
   const supabaseUrl = "https://adnbsayvxzafroyaynhm.supabase.co"
   const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFkbmJzYXl2eHphZnJveWF5bmhtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjc4NzIzMjIsImV4cCI6MjA0MzQ0ODMyMn0.rYnP9d8Z5m_Nuee_FI5Cy9QQj4IhucStYRYtnIOlK8k"
 
   const supabase = createClient(supabaseUrl, supabaseKey)
 
-  const handleResumeUpload = async (e: ChangeEvent<HTMLInputElement>) => {
+  const handleResumeUpload = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
     if (!file) {
-      toast({
-        title: "Error",
-        description: "No file selected",
-        variant: "destructive",
-      })
+      alert("Error: No file selected")
       return
     }
 
-    const fileExt = file.name.split('.').pop()
+    setSelectedFile(file)
+    
+    // Create a preview for PDF files
+    if (file.type === "application/pdf") {
+      const fileUrl = URL.createObjectURL(file)
+      setFilePreview(fileUrl)
+    } else {
+      setFilePreview(null)
+    }
+  }
+
+  const handleSubmitResume = async () => {
+    if (!selectedFile) {
+      alert("Error: No file selected")
+      return
+    }
+
+    const fileExt = selectedFile.name.split('.').pop()
     const fileName = `${Math.random()}.${fileExt}`
     const filePath = `public/${fileName}`
 
+    // Check for duplicates
+    const { data: existingFiles, error: listError } = await supabase.storage
+      .from("Resume")
+      .list('public')
+
+    if (listError) {
+      alert("Error: Failed to check for duplicates")
+      return
+    }
+
+    const isDuplicate = existingFiles.some(file => file.name === selectedFile.name)
+
+    if (isDuplicate) {
+      alert("Warning: A file with this name already exists. Uploading as a new file.")
+    }
+
     const { data, error } = await supabase.storage
       .from("Resume")
-      .upload(filePath, file)
+      .upload(filePath, selectedFile)
 
     if (data) {
-      console.log({
-        title: "Success",
-        description: "Resume uploaded successfully",
-      })
+      alert("Success: Resume uploaded successfully")
     } else if (error) {
-      console.log({
-        title: "Error",
-        description: "Failed to upload resume",
-        variant: "destructive",
-        action: <ToastAction altText="Try again">Try again</ToastAction>,
-      })
+      alert("Error: Failed to upload resume")
     }
   }
 
   const handleEmailGeneration = () => {
-    // Handle email generation
     console.log('Generating email')
-    toast({
-      title: "Email Generation",
-      description: "Your email is being generated...",
-    })
+    alert("Email Generation: Your email is being generated...")
   }
 
   const handleGetSuggestions = () => {
-    // Handle getting suggestions
     console.log('Getting suggestions')
-    toast({
-      title: "Suggestions",
-      description: "Fetching personalized suggestions...",
-    })
+    alert("Suggestions: Fetching personalized suggestions...")
   }
 
   const cardVariants = {
@@ -97,11 +110,29 @@ export default function Workify() {
               <CardDescription>Upload your resume for analysis</CardDescription>
             </CardHeader>
             <CardContent>
-              <Input type="file" onChange={handleResumeUpload} className="mb-4" />
+              <Input type="file" onChange={handleResumeUpload} className="mb-4" accept=".pdf,.doc,.docx" />
+              {filePreview && (
+                <div className="mt-4">
+                  <h3 className="text-lg font-semibold mb-2">Selected File Preview:</h3>
+                  <iframe src={filePreview} className="w-full h-64 border rounded" />
+                </div>
+              )}
+              {selectedFile && !filePreview && (
+                <div className="mt-4">
+                  <h3 className="text-lg font-semibold mb-2">Selected File:</h3>
+                  <p className="flex items-center">
+                    <FileText className="mr-2" />
+                    {selectedFile.name}
+                  </p>
+                </div>
+              )}
             </CardContent>
-            <CardFooter>
+            <CardFooter className="flex flex-col space-y-2">
               <Button onClick={() => document.querySelector('input[type="file"]')?.click()} className="w-full">
-                Upload Resume <ArrowRight className="ml-2" />
+                Select Resume <ArrowRight className="ml-2" />
+              </Button>
+              <Button onClick={handleSubmitResume} className="w-full" disabled={!selectedFile}>
+                Submit Resume <Send className="ml-2" />
               </Button>
             </CardFooter>
           </Card>
