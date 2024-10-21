@@ -1,0 +1,327 @@
+{
+    "phones": [
+        "+91 7715958053"
+    ],
+    "emails": [
+        "dhabalia.taksh@gmail.com"
+    ],
+    "entities": [
+        {
+            "text": "Maharashtra",
+            "label": "ORG"
+        },
+        {
+            "text": "+91",
+            "label": "PERSON"
+        },
+        {
+            "text": "7715958053",
+            "label": "DATE"
+        },
+        {
+            "text": "GitHub",
+            "label": "ORG"
+        },
+        {
+            "text": "LinkedIn Education Maharashtra Institute of Technology - Pune Pune",
+            "label": "ORG"
+        },
+        {
+            "text": "Maharashtra BTech Computer",
+            "label": "ORG"
+        },
+        {
+            "text": "7.5",
+            "label": "CARDINAL"
+        },
+        {
+            "text": "5th",
+            "label": "ORDINAL"
+        },
+        {
+            "text": "2022 - June 2026",
+            "label": "DATE"
+        },
+        {
+            "text": "10th",
+            "label": "ORDINAL"
+        },
+        {
+            "text": "Pune Work Experience IIIT",
+            "label": "WORK_OF_ART"
+        },
+        {
+            "text": "Delhi Delhi System Design",
+            "label": "ORG"
+        },
+        {
+            "text": "2024",
+            "label": "DATE"
+        },
+        {
+            "text": "Design , System Architecture GitHub \u2022 Designed",
+            "label": "ORG"
+        },
+        {
+            "text": "STM32 micro",
+            "label": "ORG"
+        },
+        {
+            "text": "Dart",
+            "label": "GPE"
+        },
+        {
+            "text": "PCB",
+            "label": "ORG"
+        },
+        {
+            "text": "Bolt Pune",
+            "label": "PERSON"
+        },
+        {
+            "text": "June 2023 - Jan 2024",
+            "label": "DATE"
+        },
+        {
+            "text": "4",
+            "label": "CARDINAL"
+        },
+        {
+            "text": "FMAE Moto Student India - Electric Super",
+            "label": "ORG"
+        },
+        {
+            "text": "Building Competition",
+            "label": "ORG"
+        },
+        {
+            "text": "2",
+            "label": "CARDINAL"
+        },
+        {
+            "text": "4",
+            "label": "CARDINAL"
+        },
+        {
+            "text": "SOS",
+            "label": "ORG"
+        },
+        {
+            "text": "HVS",
+            "label": "ORG"
+        },
+        {
+            "text": "Deep Learning",
+            "label": "PERSON"
+        },
+        {
+            "text": "Coding",
+            "label": "ORG"
+        },
+        {
+            "text": "[YOLOv8",
+            "label": "PERSON"
+        },
+        {
+            "text": "MATLAB",
+            "label": "ORG"
+        },
+        {
+            "text": "IRIS",
+            "label": "ORG"
+        },
+        {
+            "text": "September 2024",
+            "label": "DATE"
+        },
+        {
+            "text": "GitHub Developed",
+            "label": "PRODUCT"
+        },
+        {
+            "text": "Utilized Razorpay",
+            "label": "PERSON"
+        },
+        {
+            "text": "Supabase Database",
+            "label": "PERSON"
+        },
+        {
+            "text": "Vercel",
+            "label": "PERSON"
+        },
+        {
+            "text": "March - May 2024",
+            "label": "DATE"
+        },
+        {
+            "text": "MQTT",
+            "label": "ORG"
+        },
+        {
+            "text": "Embedded-Systems",
+            "label": "ORG"
+        },
+        {
+            "text": "40%",
+            "label": "PERCENT"
+        },
+        {
+            "text": "CCTV",
+            "label": "ORG"
+        },
+        {
+            "text": "Raspberry Pi",
+            "label": "PERSON"
+        },
+        {
+            "text": "Algorithms",
+            "label": "PERSON"
+        },
+        {
+            "text": "30%",
+            "label": "PERCENT"
+        },
+        {
+            "text": "FPS",
+            "label": "ORG"
+        },
+        {
+            "text": "10%",
+            "label": "PERCENT"
+        },
+        {
+            "text": "Leverages Ray-Casting",
+            "label": "PERSON"
+        },
+        {
+            "text": "BFS",
+            "label": "ORG"
+        },
+        {
+            "text": "NPC",
+            "label": "ORG"
+        },
+        {
+            "text": "WIP",
+            "label": "ORG"
+        },
+        {
+            "text": "June - Dec 2023",
+            "label": "DATE"
+        },
+        {
+            "text": "German",
+            "label": "NORP"
+        },
+        {
+            "text": "Languages Python",
+            "label": "ORG"
+        },
+        {
+            "text": "C++ Packages Music21",
+            "label": "PERSON"
+        },
+        {
+            "text": "Pandas",
+            "label": "PERSON"
+        },
+        {
+            "text": "NumPy",
+            "label": "GPE"
+        },
+        {
+            "text": "TensorFlow",
+            "label": "ORG"
+        },
+        {
+            "text": "PyGame Electronics",
+            "label": "ORG"
+        },
+        {
+            "text": "Raspberry Pi",
+            "label": "PERSON"
+        },
+        {
+            "text": "Node-RED",
+            "label": "ORG"
+        },
+        {
+            "text": "Arduino",
+            "label": "ORG"
+        },
+        {
+            "text": "SolidWorks",
+            "label": "ORG"
+        },
+        {
+            "text": "Blender Communication Protocols MQTT",
+            "label": "ORG"
+        },
+        {
+            "text": "LoRaWAN",
+            "label": "ORG"
+        },
+        {
+            "text": "Cellular",
+            "label": "ORG"
+        },
+        {
+            "text": "NB-IoT Soft Skills \u2022 Leadership",
+            "label": "ORG"
+        },
+        {
+            "text": "15",
+            "label": "CARDINAL"
+        },
+        {
+            "text": "FMAE Moto Student India",
+            "label": "ORG"
+        },
+        {
+            "text": "40",
+            "label": "CARDINAL"
+        },
+        {
+            "text": "Flutter, Firebase",
+            "label": "ORG"
+        },
+        {
+            "text": "Awards Ranked",
+            "label": "PERSON"
+        },
+        {
+            "text": "5",
+            "label": "CARDINAL"
+        },
+        {
+            "text": "Electric Super",
+            "label": "ORG"
+        },
+        {
+            "text": "Racing Competition FMAE (Federation of Mechanical and Automotive Engineers",
+            "label": "ORG"
+        },
+        {
+            "text": "Student Club",
+            "label": "ORG"
+        },
+        {
+            "text": "MIT",
+            "label": "ORG"
+        },
+        {
+            "text": "Student Club",
+            "label": "ORG"
+        },
+        {
+            "text": "MIT",
+            "label": "ORG"
+        },
+        {
+            "text": "Innovations and Electronics",
+            "label": "ORG"
+        }
+    ],
+    "text": "Taksh Dhabalia Pune, Maharashtra \u00b7 dhabalia.taksh@gmail.com \u00b7 +91 7715958053 \u00b7 GitHub \u00b7 LinkedIn Education Maharashtra Institute of Technology - Pune Pune, Maharashtra BTech Computer Science GPA: 7.5 - Till 5th Sem Aug 2022 - June 2026 BRPS - ICSE 10th - 91.7% Pune Work Experience IIIT-Delhi Delhi System Design and Embedded Software Developer Intern Jan 2024 - Aug 2024 Key Skills - Cloud , Micro-controllers , Low level Design , System Architecture GitHub \u2022 Designed and implemented a water management system with an app and cloud integration. \u2022 Developed the overall hardware and cloud architecture, deployed on STM32 micro controllers. \u2022 Developed the entire app for the project written in Dart using the Flutter framework. Used Firebase for the backend . \u2022 Demonstrated skills in micro-controller architecture , low-level embedded systems programming , system design and architecture, PCB designing and Flutter development. Team Bolt Pune Vice Lead, Electronics June 2023 - Jan 2024 \u2022 Secured All India Rank 4 in FMAE Moto Student India - Electric Super bike Building Competition and overall rank 2 in cost report and endurance test. \u2022 Led the innovations and electronics department, developing 4 new innovations including GPS tracking and SOS impact sensors. \u2022 Contributed to wiring and circuitry for GLVS and HVS systems. Projects Tarzan August - Current 2024 Embedded Systems , Deep Learning, Sensors, Coding, Simulations GitHub Developing an autonomous vehicle portable module for non-ADAS enabled cars. Uses an app to input images and run custom deep learning models [YOLOv8] to make decisions for car steering angle, acceleration, and braking values. Takes surroundings like other cars , potholes , barricades etc. to make its decisions Worked in making its simulations on MATLAB using pure-pursuit modelling . IRIS Website August- September 2024 Web Development- React, Payments, Databases, APIs GitHub Developed an official site for the club, handling multiple concurrent real-time payments and updating entries for events. Utilized Razorpay, Supabase Database, and Vercel for deployment. Real-Time Parking Management System March - May 2024 OpenCV, Multi-Threading, MQTT, Embedded-Systems GitHub A system that takes in a live video feed and allocates parking based on parking availability . Uses OpenCV and Threading with YOLOv8 for real-time allocation, speeding up the process by 40%. Implemented using CCTV cameras and Raspberry Pi. Doom on Web Jan - May 2024 Python, Algorithms, Web APIs GitHub Achieved a 30% performance improvement in FPS and a 10% improvement on web platforms by implementing core algorithms natively. . Leverages Ray-Casting for its core engine algorithm and uses BFS and DFS for its NPC algorithms Developing multiplayer and squad-up features (WIP). Music_Gen June - Dec 2023 Music21, Python, TensorFlow GitHub Produced music from input using LSTMs in real time. Utilized open-source KERN datasets for German songs to generate unique melodies based on the input provided, giving the continuations of them as a result .Skills Languages Python, C, C++ Packages Music21, OpenCV, Pandas, NumPy, TensorFlow, PyGame Electronics Raspberry Pi, STM32, Node-RED, ESP and Arduino Family Software MATLAB, SolidWorks, Blender Communication Protocols MQTT, LoRaWAN, ESP-Now, Cellular, NB-IoT Soft Skills \u2022 Leadership: Led team of 15 students in electric super bike competition for the innovations department and secured top rankings in FMAE Moto Student India. Currently eading a team of 40 students as President , doing various tasks involving guiding projects , research papers and non-technical events \u2022 Communication: Effectively conveyed complex technical concepts to non-technical team members and stakeholders. \u2022 Problem-Solving: Demonstrated ability to troubleshoot issues in embedded systems and optimize algorithms for real-time performance. \u2022 Team Collaboration: Worked closely with cross-functional teams on various projects, including autonomous vehicles and the IRIS Website . \u2022 Time Management: Managed multiple projects, competitions, and academic workload, consistently meeting deadlines and maintaining the standard. \u2022 Adaptability: Quickly learned and integrated new technologies such as Flutter, Firebase, and STM32 inthe shortnoticeprovided. Also pivotedfromexistingtechstacktonewerapproachesin myinternship. Awards Ranked in Top 5 in Electric Super bike Racing Competition FMAE (Federation of Mechanical and Automotive Engineers) Positions of Responsibility IRIS [Student Club, MIT-WPU] - President Team Bolt [Student Club, MIT-WPU] - Vice-Lead for Innovations and Electronics"
+}
