@@ -32,7 +32,6 @@ def extract_info_from_resume(file_path):
     phones = re.findall(phone_pattern, text)
     emails = re.findall(email_pattern, text)
     
-
     # Return extracted data
     return {
         'phones': phones,
@@ -40,6 +39,7 @@ def extract_info_from_resume(file_path):
         'entities': entities,  # Optionally saving entities
         'text': text
     }
+
 def save_resume_info_to_json(pdf_file, json_file):
     # Extract information from resume
     info = extract_info_from_resume(pdf_file)
@@ -50,5 +50,17 @@ def save_resume_info_to_json(pdf_file, json_file):
     
     # Return the JSON data
     return info
-save_resume_info_to_json('Taksh_Dhabalia_Profile.pdf', 'resume_info.json')
+
+def save_text_to_txt(pdf_file, txt_file):
+    # Extract all text from the resume
+    info = extract_info_from_resume(pdf_file)
+    
+    # Write the text to a txt file
+    with open(txt_file, 'w') as file:
+        file.write(info['text'])
+
+    print(f"Text extracted and saved to {txt_file}")
+
+
+save_text_to_txt('D:/Workify/Backend/Taksh_Dhabalia_Profile.pdf', 'D:/Workify/Backend/resume_text.txt')
 

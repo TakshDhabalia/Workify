@@ -36,11 +36,24 @@ def fetch_and_download_files_from_bucket(bucket_name, download_path):
     except Exception as e:
         print(f"Error fetching files: {e}")
 
+
+def prepare_download_directory(bucket_name, download_path):
+    """
+    Prepares the download directory for files from the specified bucket.
+    
+    Args:
+        bucket_name (str): The name of the bucket.
+        download_path (str): The path where files should be downloaded.
+    
+    Returns:
+        str: The path to the download directory.
+    """
+    # Create the download directory if it doesn't exist
+    os.makedirs(download_path, exist_ok=True)
+    return download_path
+
 # Example usage
 bucket_name = "Resume"  # Replace with your bucket name
-download_path = "F:\BDT_DOWNLOADS"  # Specify the path where files should be downloaded
-
-# Create the download directory if it doesn't exist
-os.makedirs(download_path, exist_ok=True)
-
+download_path = "F:\\BDT_DOWNLOADS"  # Specify the path where files should be downloaded
+download_dir = prepare_download_directory(bucket_name, download_path)
 fetch_and_download_files_from_bucket(bucket_name, download_path)
