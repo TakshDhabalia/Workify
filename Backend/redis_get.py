@@ -1,7 +1,7 @@
 from redis_db import r 
 
 
-key = "user:1:profile"
+key = "user:3:profile"
 value = r.get(key)
 
 # Check if the key exists and print the value
