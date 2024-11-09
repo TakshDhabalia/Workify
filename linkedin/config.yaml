@@ -1,0 +1,37 @@
+username: dhabalia.taksh@gmail.com
+password: Dhabalia@2906
+phone_number: +91 7715958053
+
+profile_path: '' #can be empty, will default to 'C:\Users\<user>\AppData\Local\Google\Chrome\User Data\Default'
+
+
+positions:
+- Software Engineer
+
+
+locations:
+- India
+- Remote
+
+salary: 60,000
+rate: 25
+# --------- Optional Parameters -------
+uploads:
+  Resume:D: D:\Workify\linkedin\Taksh_Dhabalia_Resume.pdf
+  Cover Letter:  D:\Workify\linkedin\Taksh_Dhabalia_Resume.pdf
+  #Photo: # PATH TO photo
+
+
+output_filename:
+- D:\Workify\linkedin\output.csv
+
+# blacklist:
+# - # Company names you want to ignore
+
+experience_level:
+  # - 1 # Entry level
+  # - 2 # Associate
+  # - 3 # Mid-Senior level
+  # - 4 # Director
+  # - 5 # Executive
+  # - 6 # Internship
