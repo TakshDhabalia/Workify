@@ -72,7 +72,7 @@ const Hero = () => {
         }
       },
       prefill: {
-        name: "Enter your name",
+        name: "",
       },
       notes: {
         address: "India",
