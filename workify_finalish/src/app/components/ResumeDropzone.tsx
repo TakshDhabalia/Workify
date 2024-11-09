@@ -95,7 +95,7 @@ export const ResumeDropzone = ({
 
     if (data) {
       alert("Success: Resume uploaded successfully")
-      analyzeResume()
+
     } else if (error) {
       alert("Error: Failed to upload resume")
     }
@@ -222,7 +222,7 @@ export const ResumeDropzone = ({
         )}
         
         
-
+        
     
         <div className="pt-4">
           {!hasFile ? (
@@ -265,12 +265,56 @@ export const ResumeDropzone = ({
         
         
         </div>
+
+        <div className="pt-4">
+          {!hasFile ? (
+            <>
+              <label
+                className={cx(
+                  "within-outline-theme-purple cursor-pointer rounded-full px-6 pb-2.5 pt-2 font-semibold shadow-sm",
+                  playgroundView ? "border" : "bg-primary"
+                )}
+              >
+                Supabase uplaods 
+                <input
+                  type="file"
+                  className="sr-only"
+                  accept=".pdf"
+                  onChange={handleResumeUpload}
+                  onClick={handleSubmitResume} 
+                />
+              </label>
+              {hasNonPdfFile && (
+                <p className="mt-6 text-red-400">Only pdf file is supported</p>
+              )}
+            </>
+          ) : (
+            <>
+              {!playgroundView && (
+                <button
+                  type="button"
+                  className="btn-primary"
+                  onClick={onImportClick}
+                >
+                  Import and Continue <span aria-hidden="true">→</span>
+                </button>
+              )}
+              <p className={cx(" text-gray-500", !playgroundView && "mt-6")}>
+                Note: {!playgroundView ? "Import" : "Parser"} works best on
+                single column resume
+              </p>
+            </>
+          )}
+        
+        
+        </div>
         
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '10px' }}>
             <input
               type="file"
               onChange={handleResumeUpload}
+              
               style={{ marginBottom: '10px' }}
             />
             <button 
