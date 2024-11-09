@@ -277,7 +277,7 @@ export const ResumeDropzone = ({
                   playgroundView ? "border" : "bg-primary"
                 )}
               >
-                Supabase uplaods 
+                Upload on Supabase S3 
                 <input
                   type="file"
                   className="sr-only"
@@ -289,15 +289,12 @@ export const ResumeDropzone = ({
               <button 
               onClick={handleSubmitResume} 
               disabled={!file}
-              style={{
-                padding: '8px 16px',
-                fontSize: '14px',
-                backgroundColor: file ? '#4CAF50' : '#ccc',
-                color: 'white',
-                border: 'none',
-                borderRadius: '4px',
-                cursor: file ? 'pointer' : 'not-allowed'
-              }}
+              className={cx(
+                "within-outline-theme-purple cursor-pointer rounded-full px-6 pb-2.5 pt-2 font-semibold shadow-sm",
+                playgroundView ? "border" : "bg-primary"
+              )
+              
+            }
             >
               Upload File
             </button>
