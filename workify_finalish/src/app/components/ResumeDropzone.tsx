@@ -12,6 +12,7 @@ import addPdfSrc from "public/assets/add-pdf.svg";
 import Image from "next/image";
 import { cx } from "lib/cx";
 import { deepClone } from "lib/deep-clone";
+import { createClient } from '@supabase/supabase-js';
 
 const defaultFileState = {
   name: "",
@@ -31,9 +32,74 @@ export const ResumeDropzone = ({
   const [file, setFile] = useState(defaultFileState);
   const [isHoveredOnDropzone, setIsHoveredOnDropzone] = useState(false);
   const [hasNonPdfFile, setHasNonPdfFile] = useState(false);
+  const [email, setEmail] = useState('')
+  const [suggestions, setSuggestions] = useState('')
+  const [selectedFile, setSelectedFile] = useState<File | null>(null)
+  const [filePreview, setFilePreview] = useState<string | null>(null)
+  const [analysisResult, setAnalysisResult] = useState('')
+  const [jobPostings, setJobPostings] = useState<string[]>([])
+  
   const router = useRouter();
 
   const hasFile = Boolean(file.name);
+  const supabaseUrl = "https://adnbsayvxzafroyaynhm.supabase.co"
+  const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFkbmJzYXl2eHphZnJveWF5bmhtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjc4NzIzMjIsImV4cCI6MjA0MzQ0ODMyMn0.rYnP9d8Z5m_Nuee_FI5Cy9QQj4IhucStYRYtnIOlK8k"
+
+  const supabase = createClient(supabaseUrl, supabaseKey)
+
+  const handleResumeUpload = (e: ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+    if (!file) {
+      alert("Error: No file selected")
+      return
+    }
+
+    setSelectedFile(file)
+    
+    if (file.type === "application/pdf") {
+      const fileUrl = URL.createObjectURL(file)
+      setFilePreview(fileUrl)
+    } else {
+      setFilePreview(null)
+    }
+  }
+
+  const handleSubmitResume = async () => {
+    if (!selectedFile) {
+      alert("Error: No file selected")
+      return
+    }
+
+    const fileExt = selectedFile.name.split('.').pop()
+    const fileName = `${selectedFile.name}.${fileExt}`
+    const filePath = `${fileName}`
+
+    const { data: existingFiles, error: listError } = await supabase.storage
+      .from("Resume")
+      .list('public')
+
+    if (listError) {
+      alert("Error: Failed to check for duplicates")
+      return
+    }
+
+    const isDuplicate = existingFiles.some(file => file.name === selectedFile.name)
+
+    if (isDuplicate) {
+      alert("Warning: A file with this name already exists. Uploading as a new file.")
+    }
+
+    const { data, error } = await supabase.storage
+      .from("Resume")
+      .upload(filePath, selectedFile)
+
+    if (data) {
+      alert("Success: Resume uploaded successfully")
+      analyzeResume()
+    } else if (error) {
+      alert("Error: Failed to upload resume")
+    }
+  }
 
   const setNewFile = (newFile: File) => {
     if (file.fileUrl) {
@@ -154,6 +220,10 @@ export const ResumeDropzone = ({
             </button>
           </div>
         )}
+        
+        
+
+    
         <div className="pt-4">
           {!hasFile ? (
             <>
@@ -192,8 +262,33 @@ export const ResumeDropzone = ({
               </p>
             </>
           )}
+        
+        
         </div>
+        
       </div>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '10px' }}>
+            <input
+              type="file"
+              onChange={handleResumeUpload}
+              style={{ marginBottom: '10px' }}
+            />
+            <button 
+              onClick={handleSubmitResume} 
+              disabled={!file}
+              style={{
+                padding: '8px 16px',
+                fontSize: '14px',
+                backgroundColor: file ? '#4CAF50' : '#ccc',
+                color: 'white',
+                border: 'none',
+                borderRadius: '4px',
+                cursor: file ? 'pointer' : 'not-allowed'
+              }}
+            >
+              Upload File
+            </button>
+          </div>
     </div>
   );
 };
