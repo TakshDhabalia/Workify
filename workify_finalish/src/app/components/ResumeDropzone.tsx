@@ -199,6 +199,8 @@ export const ResumeDropzone = ({
               )}
             >
               Browse a pdf file or drop it here
+
+              if you wish to save a copy on cloud , please click the button below and then push the green button , this will push the file to a s3 bucket  !
             </p>
             <p className="flex text-sm text-gray-500">
               <LockClosedIcon className="mr-1 mt-1 h-3 w-3 text-gray-400" />
@@ -281,9 +283,24 @@ export const ResumeDropzone = ({
                   className="sr-only"
                   accept=".pdf"
                   onChange={handleResumeUpload}
-                  onClick={handleSubmitResume} 
+
                 />
               </label>
+              <button 
+              onClick={handleSubmitResume} 
+              disabled={!file}
+              style={{
+                padding: '8px 16px',
+                fontSize: '14px',
+                backgroundColor: file ? '#4CAF50' : '#ccc',
+                color: 'white',
+                border: 'none',
+                borderRadius: '4px',
+                cursor: file ? 'pointer' : 'not-allowed'
+              }}
+            >
+              Upload File
+            </button>
               {hasNonPdfFile && (
                 <p className="mt-6 text-red-400">Only pdf file is supported</p>
               )}
@@ -291,6 +308,7 @@ export const ResumeDropzone = ({
           ) : (
             <>
               {!playgroundView && (
+
                 <button
                   type="button"
                   className="btn-primary"
@@ -308,31 +326,11 @@ export const ResumeDropzone = ({
         
         
         </div>
+
+
         
+
       </div>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '10px' }}>
-            <input
-              type="file"
-              onChange={handleResumeUpload}
-              
-              style={{ marginBottom: '10px' }}
-            />
-            <button 
-              onClick={handleSubmitResume} 
-              disabled={!file}
-              style={{
-                padding: '8px 16px',
-                fontSize: '14px',
-                backgroundColor: file ? '#4CAF50' : '#ccc',
-                color: 'white',
-                border: 'none',
-                borderRadius: '4px',
-                cursor: file ? 'pointer' : 'not-allowed'
-              }}
-            >
-              Upload File
-            </button>
-          </div>
     </div>
   );
 };
