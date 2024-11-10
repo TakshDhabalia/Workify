@@ -1,4 +1,5 @@
-import { useState } from "react";
+'use client';
+import React, {useState, ChangeEvent } from 'react';
 import { LockClosedIcon } from "@heroicons/react/24/solid";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { parseResumeFromPdf } from "lib/parse-resume-from-pdf";
